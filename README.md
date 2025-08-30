@@ -61,3 +61,31 @@ docker run -it -w/app -v$(pwd):/app tturkowski/fruits-and-vegetables bin/phpunit
 docker run -it -w/app -v$(pwd):/app -p8080:8080 tturkowski/fruits-and-vegetables php -S 0.0.0.0:8080 -t /app/public
 # Open http://127.0.0.1:8080 in your browser
 ```
+
+## Additional Documentations
+
+### Development Commands
+
+The most important commands are available as Make targets:
+
+```bash
+# Open a container shell
+make connect
+
+# Run PHPUnit tests
+make tests
+
+# Start the development server (runs in background on port 8080)
+make server_up
+
+# View development server logs (follow mode)
+make server_logs
+
+# Stop and remove the development server container
+make server_down
+
+# composer install && update on the container
+make composer
+
+# composer dump-autoload on the container
+make dumpautoload
