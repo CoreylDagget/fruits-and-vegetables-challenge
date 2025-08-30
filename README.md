@@ -89,3 +89,26 @@ make composer
 
 # composer dump-autoload on the container
 make dumpautoload
+```
+
+### Time Summary
+
+* Initial triage (5 min): Skimmed the challenge and clarified scope.
+* Repository review (10 min): Read composer.json, sample request.json, and documentation to understand domain and expected I/O.
+* Environment setup (20 min): Reviewed an AI-proposed solution and other forks for context; brought Docker containers up locally.
+* Build tooling (10 min): Created and validated a Makefile to streamline install, test, and run tasks.
+* First test pass (15 min): Wrote an initial test for item generation to anchor the domain model.
+* Coding & Quality of Life(75 min): Implemented Item and Weight classes. Added unit tests for Weight, expanded Makefile with Composer targets, ensured tests pass, updated documentation, and pushed the first commit.
+* Collections (30 min): Implemented FruitsCollection with corresponding unit tests.
+* Time is running out (60 min): Added an integration test that processes a request payload and reloads data from a serialized .dat file via the file store. Created minimal implementation with AI assistance
+
+Total time spent: ~3h 45m
+
+Not counting the final documentation. Within the left 15 Minutes i will not be able to finish all goals.
+
+Next Steps:
+- Create API Integrationtest, Controller and Routes, Postman/Swagger Dokumentation
+- Fix linting, codestyle, missing tests
+
+### How can you verify my code works?
+Look into RequestJsonProcessorFileStoreTest. It's commented, It shows processing and generation of the Collections as well as loading from a store
